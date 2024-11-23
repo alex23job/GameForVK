@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Text txtScore;
+    [SerializeField] private Text txtAvatar;
+    [SerializeField] private Text txtDebug;
 
     private int score = 0;
+    public int Score { get { return score; } }
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +32,15 @@ public class GameManager : MonoBehaviour
     private void ViewScore()
     {
         txtScore.text = $"Очки : {score}";
+    }
+
+    public void ViewAvatar(string name)
+    {
+        txtAvatar.text = name;
+    }
+
+    public void ViewDebug(string zn)
+    {
+        txtDebug.text = zn;
     }
 }
